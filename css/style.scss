@@ -1,0 +1,101 @@
+$naturalPink: #FE4A74;
+$offPink: #BDA7B6;
+$onPink: #DBC2D3;
+$offPurple: #511A41;
+$brightPink: #FE4ACE;
+$dark: #060604;
+$distanceTop: 1em;
+$distanceSide: 21px;
+
+body {
+    margin: 0px;
+    background-image: url("../images/slinky-img.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 250px 250px;
+    background-position: right bottom;
+    background-color: $dark;
+
+    color: $onPink;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+header {
+    background-color: $dark;
+}
+
+nav, #header-img, section {
+    padding: $distanceTop $distanceSide 0 $distanceSide;
+}
+
+section {
+    height: 75vh;
+}
+
+#top-line {
+    height: 5px;
+    width: 100%;
+    background-color: $naturalPink;
+}
+
+#header-img {
+    img {
+        display: block;
+        height: 74px;
+    }
+}
+
+nav {
+    width: 360px;
+    display: flex;
+    justify-content: space-between;
+    a {
+        color: $offPink;
+        text-decoration: none;
+        font-size: 23px;
+    }
+}
+
+.nav-link {
+    text-align: center;
+    width: 108px;
+    border-bottom: 10px solid $offPurple;
+}
+
+iframe {
+    width: 300px;
+}
+
+#home {
+
+    :nth-child(1) {
+        margin-top: 19%;
+        margin-left: 15px;
+    }
+    :nth-child(2) {
+        margin-left: 71px;
+    }
+}
+
+#science {
+    background-color: $dark;
+    img {
+        color: red;
+    }
+}
+
+#about {
+    background-color: $dark;
+}
+
+footer {
+    height: 150px;
+    background-color: $dark;
+    padding-left: $distanceSide;
+
+    p {
+        margin-top: 0px;
+    }
+}
