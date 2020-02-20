@@ -10,18 +10,18 @@
 <body>
     <header id="header">
         <div id="top-line"></div>
-        <div id="header-img" class="logo">
-            <img src="images\SLINKY.svg" alt="Slinky logo">
+        <div class="logo">
+            <img id="header-img" src="images\SLINKY.svg" alt="Slinky logo">
         </div>
         <nav id="nav-bar">
-            <div id="home-link" class="nav-link active">
-                <a href="#home">Home</a>
+            <div id="home-link" class="link-container active">
+                <a class="nav-link" href="#home">Home</a>
             </div>
-            <div id="science-link" class="nav-link">
-                <a href="#science">Science</a>
+            <div id="science-link" class="link-container">
+                <a class="nav-link" href="#science">Science</a>
             </div>
-            <div id="about-link" class="nav-link">
-                <a href="#about">About</a>
+            <div id="about-link" class="link-container">
+                <a class="nav-link" href="#about">About</a>
             </div>
         </nav>
     </header>
@@ -41,7 +41,7 @@
                 <p>The falling slinky or the contracting slinky? The question sheds light on dynamics in physics.</p>
             </div>
             <div class="downer">
-                <iframe src="https://www.youtube.com/embed/uiyMuHuCFo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Veritasium channel drops Slinky in slow motion</iframe>
+                <iframe id="video" src="https://www.youtube.com/embed/uiyMuHuCFo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Veritasium channel drops Slinky in slow motion</iframe>
             </div>
         </section>
         <section id="about">
@@ -89,17 +89,17 @@
 
             let scrollPosY = window.pageYOffset | document.body.scrollTop;
             if (scrollPosY < yScience) {
-                homeLink.className = ('nav-link active');
-                scienceLink.className = ('nav-link');
-                aboutLink.className = ('nav-link');
+                homeLink.className = ('link-container active');
+                scienceLink.className = ('link-container');
+                aboutLink.className = ('link-container');
             } else if (scrollPosY < yAbout + 158) {
-                homeLink.className = ('nav-link');
-                scienceLink.className = ('nav-link active');
-                aboutLink.className = ('nav-link');
+                homeLink.className = ('link-container');
+                scienceLink.className = ('link-container active');
+                aboutLink.className = ('link-container');
             } else if (scrollPosY > yAbout + 158){
-                homeLink.className = ('nav-link');
-                scienceLink.className = ('nav-link');
-                aboutLink.className = ('nav-link active');
+                homeLink.className = ('link-container');
+                scienceLink.className = ('link-container');
+                aboutLink.className = ('link-container active');
             }
 
             console.log("Got these y-coordinates... home:" + yHome + 
@@ -108,5 +108,6 @@
         }
 
     </script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>
