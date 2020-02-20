@@ -1,3 +1,8 @@
+.active a {
+  color: #DBC2D3;
+  border-bottom: 10px solid #FE4ACE;
+}
+
 body {
   margin: 0px;
   background-image: url("../images/slinky-img.png");
@@ -13,6 +18,8 @@ body {
 }
 
 header {
+  position: fixed;
+  width: 100%;
   background-color: #060604;
 }
 
@@ -21,7 +28,7 @@ nav, #header-img, section {
 }
 
 section {
-  height: 75vh;
+  height: 97vh;
 }
 
 #top-line {
@@ -48,7 +55,6 @@ nav a {
 
 .nav-link {
   text-align: center;
-  width: 108px;
   border-bottom: 10px solid #511A41;
 }
 
@@ -56,12 +62,52 @@ iframe {
   width: 300px;
 }
 
-#home :nth-child(1) {
-  margin-top: 19%;
+#home {
+  display: flex;
+  flex-direction: column;
+}
+#home > div > :nth-child(1) {
+  margin-top: 15%;
   margin-left: 15px;
 }
-#home :nth-child(2) {
+#home > div > :nth-child(2) {
   margin-left: 71px;
+}
+#home .upper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.upper, .downer {
+  height: 50%;
+}
+
+.downer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.scroll {
+  margin-bottom: 0px;
+  padding-left: 5px;
+  width: 45px;
+  height: 50px;
+  background-color: #BDA7B6;
+  border-radius: 100%;
+}
+
+.scroll-link {
+  align-self: center;
+  justify-self: flex-end;
+  color: #060604;
+  margin: 0px;
+  font-size: 45px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
 }
 
 #science {
@@ -70,9 +116,60 @@ iframe {
 #science img {
   color: red;
 }
+#science .upper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  line-height: 1.5em;
+  width: 25em;
+  margin: auto;
+}
+#science .downer iframe {
+  margin: auto;
+}
 
 #about {
   background-color: #060604;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  line-height: 1.5em;
+  margin: auto;
+}
+#about .upper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  line-height: 1.5em;
+  width: 25em;
+  margin: auto;
+}
+#about .downer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.5em;
+  width: 25em;
+  margin: auto;
+}
+#about .downer h2 {
+  margin-top: 2em;
+  margin-bottom: 0px;
+}
+#about .downer h3 {
+  margin: 0.2em 0em 0.7em 0em;
+}
+#about h1, #about h2 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+#about p {
+  max-width: 30em;
+}
+
+#submit {
+  border-style: none;
+  background-color: #74fe4a;
 }
 
 footer {

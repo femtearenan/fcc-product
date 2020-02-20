@@ -14,40 +14,99 @@
             <img src="images\SLINKY.svg" alt="Slinky logo">
         </div>
         <nav id="nav-bar">
-            <div class="nav-link">
+            <div id="home-link" class="nav-link active">
                 <a href="#home">Home</a>
             </div>
-            <div class="nav-link">
+            <div id="science-link" class="nav-link">
                 <a href="#science">Science</a>
             </div>
-            <div class="nav-link">
+            <div id="about-link" class="nav-link">
                 <a href="#about">About</a>
             </div>
         </nav>
     </header>
     <main>
         <section id="home">
-            <p>from simple</p>
-            <p>to SUPREME</p>
-
-            <div class="scroll">&#709;</div>
+            <div class="upper">
+                <p>from simple</p>
+                <p>to SUPREME</p>
+            </div>
+            <div class="downer">
+                <a class="scroll-link" href="#science"><div class="scroll" id="scroll1">&#709;</div></a>
+            </div>
         </section>
         <section id="science">
-            <h1>The Astonishing Science of Slinky.</h1>
-            <p>The falling slinky or the contracting slinky? The question sheds light on dynamics in physics.</p>
-            <iframe src="https://www.youtube.com/embed/uiyMuHuCFo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Veritasium channel drops Slinky in slow motion</iframe>
-            <img src="images\eqn.png" alt="equation to calculate time for contraction when Slinky is in free fall.">
+            <div class="upper">
+                <h1>The Astonishing Science of Slinky.</h1>
+                <p>The falling slinky or the contracting slinky? The question sheds light on dynamics in physics.</p>
+            </div>
+            <div class="downer">
+                <iframe src="https://www.youtube.com/embed/uiyMuHuCFo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Veritasium channel drops Slinky in slow motion</iframe>
+                <!-- <img src="images\eqn.png" alt="equation to calculate time for contraction when Slinky is in free fall."> -->
+                <a class="scroll-link" href="#about"><div class="scroll" id="scroll1">&#709;</div></a>
+            </div>
         </section>
         <section id="about">
-            <h1>Slinky</h1>
-            <h2>Simple & Supreme</h2>
-            <p>It may have started as a mistake, but the coil folding over itself - now known as the Slinky - have found its place as a TOY unlike any other.</p>
+            <div class="upper">
+                <h1>Slinky</h1>
+                <h2>Simple & Supreme</h2>
+                <p>It may have started as a mistake, but the coil folding over itself - now known as the Slinky - have found its place as a TOY unlike any other.</p>
+            </div>
+            <div class="downer">
+                <h2>Stay in the loop</h2>
+                <h3>Join our news letter!</h3>
+                <form id="form" action="https://www.freecodecamp.org/email-submit" method="get">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                    <input id="submit" type="submit">
+                </form>
+            </div>
         </section>
     </main>
     <footer>
         <p>Anders Björkland 2020</p>
         <p>anders@femtearenan.se</p>
     </footer>
-    
+    <script>
+        let homeLink = document.getElementById("home-link");
+        let scienceLink = document.getElementById("science-link");
+        let aboutLink = document.getElementById("about-link");
+        
+
+        let homeElement = document.getElementById("home");
+        let scienceElement = document.getElementById("science");
+        let aboutElement = document.getElementById("about");
+
+        let yHome = homeElement.getBoundingClientRect().y;
+        let yScience = scienceElement.getBoundingClientRect().y;
+        let yAbout = aboutElement.getBoundingClientRect().y;
+
+        // Inspiration from Amanda de Rijk, 2016 (https://www.competa.com/blog/add-a-css-class-on-scroll-with-vanilla-javascript/) [2020-02-20]
+        window.onscroll = function changeClass() {
+            yHome = homeElement.getBoundingClientRect().y;
+            yScience = scienceElement.getBoundingClientRect().y;
+            yAbout = aboutElement.getBoundingClientRect().y;
+
+            let scrollPosY = window.pageYOffset | document.body.scrollTop;
+            if (scrollPosY < yScience) {
+                homeLink.className = ('nav-link active');
+                scienceLink.className = ('nav-link');
+                aboutLink.className = ('nav-link');
+            } else if (scrollPosY < yAbout) {
+                homeLink.className = ('nav-link');
+                scienceLink.className = ('nav-link active');
+                aboutLink.className = ('nav-link');
+            } else if (scrollPosY >= yAbout){
+                homeLink.className = ('nav-link');
+                scienceLink.className = ('nav-link');
+                aboutLink.className = ('nav-link active');
+            }
+
+            console.log("Got these y-coordinates... home:" + yHome + 
+            " science:" + yScience + " about:" + yAbout);
+            console.log("\n Scroll pos:" + scrollPosY);
+        }
+
+    </script>
 </body>
 </html>

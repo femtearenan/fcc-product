@@ -4,8 +4,17 @@ $onPink: #DBC2D3;
 $offPurple: #511A41;
 $brightPink: #FE4ACE;
 $dark: #060604;
+$contrastGreen: #74fe4a;
+
 $distanceTop: 1em;
 $distanceSide: 21px;
+
+.active {
+    a {
+        color: $onPink;
+        border-bottom: 10px solid $brightPink;
+    }
+}
 
 body {
     margin: 0px;
@@ -23,6 +32,8 @@ body {
 }
 
 header {
+    position: fixed;
+    width: 100%;
     background-color: $dark;
 }
 
@@ -31,7 +42,7 @@ nav, #header-img, section {
 }
 
 section {
-    height: 75vh;
+    height: 97vh;
 }
 
 #top-line {
@@ -60,7 +71,6 @@ nav {
 
 .nav-link {
     text-align: center;
-    width: 108px;
     border-bottom: 10px solid $offPurple;
 }
 
@@ -69,14 +79,54 @@ iframe {
 }
 
 #home {
+    display: flex;
+    flex-direction: column;
 
-    :nth-child(1) {
-        margin-top: 19%;
+    >div>:nth-child(1) {
+        margin-top: 15%;
         margin-left: 15px;
     }
-    :nth-child(2) {
+    >div>:nth-child(2) {
         margin-left: 71px;
     }
+
+    .upper {
+        // padding-top: 27%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end
+    }
+}
+
+.upper, .downer {
+    height: 50%;
+}
+
+.downer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.scroll {
+    margin-bottom: 0px;
+    padding-left: 5px;
+    width: 45px;
+    height: 50px;
+    background-color: $offPink;
+    border-radius: 100%;
+}
+
+.scroll-link {
+    align-self: center;
+    justify-self: flex-end;
+    color: $dark;
+    margin: 0px;
+    font-size: 45px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
 }
 
 #science {
@@ -84,10 +134,69 @@ iframe {
     img {
         color: red;
     }
+    .upper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        line-height: 1.5em;
+        width: 25em;
+        margin: auto;
+    }
+
+    .downer {
+        iframe {
+            margin: auto;
+        }
+    }
 }
 
 #about {
     background-color: $dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    line-height: 1.5em;
+    margin: auto;
+
+    .upper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        line-height: 1.5em;
+        width: 25em;
+        margin: auto;
+    }
+
+    .downer {
+        h2 {
+            margin-top: 2em;
+            margin-bottom: 0px;
+        }
+        h3 {
+            margin: 0.2em 0em 0.7em 0em;;
+        }
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1.5em;
+        width: 25em;
+        margin: auto;
+    }
+
+    h1, h2 {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        max-width: 30em;
+    }
+}
+
+#submit {
+    border-style: none;
+    background-color: $contrastGreen;
 }
 
 footer {
