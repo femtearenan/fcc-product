@@ -42,7 +42,6 @@
             </div>
             <div class="downer">
                 <iframe src="https://www.youtube.com/embed/uiyMuHuCFo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Veritasium channel drops Slinky in slow motion</iframe>
-                <!-- <img src="images\eqn.png" alt="equation to calculate time for contraction when Slinky is in free fall."> -->
             </div>
         </section>
         <section id="about">
@@ -52,13 +51,15 @@
                 <p>It may have started as a mistake, but the coil folding over itself - now known as the Slinky - have found its place as a TOY unlike any other.</p>
             </div>
             <div class="downer">
-                <h2>Stay in the loop</h2>
-                <h3>Join our news letter!</h3>
-                <form id="form" action="https://www.freecodecamp.org/email-submit" method="get">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
-                    <input id="submit" type="submit">
-                </form>
+                <div id="form-container">
+                    <h2>Stay in the loop</h2>
+                    <h3>Join our news letter!</h3>
+                    <form id="form" action="https://www.freecodecamp.org/email-submit" method="get">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                        <input id="submit" type="submit">
+                    </form>
+                </div>
             </div>
         </section>
     </main>
@@ -91,11 +92,11 @@
                 homeLink.className = ('nav-link active');
                 scienceLink.className = ('nav-link');
                 aboutLink.className = ('nav-link');
-            } else if (scrollPosY < yAbout) {
+            } else if (scrollPosY < yAbout + 158) {
                 homeLink.className = ('nav-link');
                 scienceLink.className = ('nav-link active');
                 aboutLink.className = ('nav-link');
-            } else if (scrollPosY >= yAbout){
+            } else if (scrollPosY > yAbout + 158){
                 homeLink.className = ('nav-link');
                 scienceLink.className = ('nav-link');
                 aboutLink.className = ('nav-link active');

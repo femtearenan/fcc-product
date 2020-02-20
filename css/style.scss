@@ -181,8 +181,9 @@ iframe {
     }
 
     .downer {
+        padding-top: 4em;
+
         h2 {
-            margin-top: 2em;
             margin-bottom: 0px;
         }
         h3 {
@@ -224,6 +225,8 @@ h3 {
 #submit {
     border-style: none;
     background-color: $contrastGreen;
+    height: 1.7em;
+    font-weight: bold;
 }
 
 footer {
@@ -239,5 +242,69 @@ footer {
     p {
         font-size: 16px;
         margin: 0px;
+    }
+}
+
+#form-container {
+    // padding: 0px 0px 17px 17px;
+    // border-left: 4px solid red;
+    // border-bottom: 4px solid red;
+    // border-bottom-left-radius: 30%;
+}
+
+@media (min-width: 420px) {
+
+    #science .downer iframe {
+        margin-top: 30px;
+    }
+
+    #science, #about {
+        height: auto;
+    }
+
+    section p {
+        font-size: 22px;
+        line-height: 1.2em;
+    }
+
+    nav {
+        justify-content: flex-start;
+    }
+
+    nav > div {
+        margin-left: 2.2em;
+    }
+
+    iframe {
+        width: 400px;
+        height: 225px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+}
+
+@media (min-width: 1020px) {
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 38px;
+    }
+    h3 {
+        font-size: 35px;
+    }
+
+    #science {
+        .upper {
+            line-height: 2.2em;
+        }
+    }
+
+    iframe {
+        width: 900px;
+        height: 508px;
     }
 }
